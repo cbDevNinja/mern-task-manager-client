@@ -19,7 +19,7 @@ const App = () => {
   useEffect(() => {
     const fetchTasks = async () => {
       try {
-        const response = await fetch('http://localhost:3001/api/tasks');
+        const response = await fetch('https://mern-task-cbdevapp-api.onrender.com/api/tasks');
         if (response.ok) {
           const tasks = await response.json();
           setTasks(tasks);
@@ -42,7 +42,7 @@ const App = () => {
     }
   
     try {
-      const response = await fetch('http://localhost:3001/api/tasks', {
+      const response = await fetch('https://mern-task-cbdevapp-api.onrender.com/api/tasks', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json'
@@ -66,7 +66,7 @@ const App = () => {
 
   const handleDeleteTask = async (id: number) => {
     try {
-      const response = await fetch(`http://localhost:3001/api/tasks/${id}`, {
+      const response = await fetch(`https://mern-task-cbdevapp-api.onrender.com/api/tasks/${id}`, {
         method: 'DELETE',
       });
   
@@ -88,7 +88,7 @@ const App = () => {
     const updatedTask = { ...taskToUpdate, completed: !taskToUpdate.completed };
   
     try {
-      const response = await fetch(`http://localhost:3001/api/tasks/${id}`, {
+      const response = await fetch(`https://mern-task-cbdevapp-api.onrender.com/api/tasks/${id}`, {
         method: 'PUT',
         headers: {
           'Content-Type': 'application/json'
